@@ -4,18 +4,36 @@ on:
   workflow_dispatch:
 
 jobs:
-  ubuntu-environment-variables:
+  mainjob:
+    name: 'Print the Default Github vars'
     runs-on: ubuntu-latest
+
     steps:
-      - run: env
+    - name: print-values-of-env-vars
+      run: |
+        echo "$GITHUB_ACTION"
+        echo "$GITHUB_ENV"
+        echo "$GITHUB_API_URL"
+        echo "$GITHUB_JOB"
+        echo "$GITHUB_PATH"
+        echo "$GITHUB_STEP_SUMMARY"
+        echo "$GITHUB_WORKFLOW"
+        echo "$GITHUB_REPOSITORY_OWNER"
+        echo "$GITHUB_RUN_NUMBER"
+        echo "$GITHUB_NAME"
+
+#   ubuntu-environment-variables:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: env
     
 
-  windows-environment-variables:
-    runs-on: windows-latest
-    steps:
-      - run: env
+#   windows-environment-variables:
+#     runs-on: windows-latest
+#     steps:
+#       - run: env
 
-  macos-environment-variables:
-    runs-on: macos-latest
-    steps:
-      - run: env
+#   macos-environment-variables:
+#     runs-on: macos-latest
+#     steps:
+#       - run: env

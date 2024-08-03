@@ -22,7 +22,7 @@ jobs:
       run: |
         echo "$Greeting $First_name. Today is $DAY_OF_WEEK"
         echo "testvar $testvar"
-        echo "testvar ${{ env.testvar}}"
-      env:
-        First_name: Student
-        testvar: value-3
+        echo "testvar ${{ env.testvar}}"  # Recommended
+    #   env:
+    #     First_name: Student
+    #     testvar: value-3

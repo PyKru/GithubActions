@@ -1,3 +1,7 @@
+# Heirarchy for environment variable access Github follows. 
+
+# steps --> jobs --> root level 
+
 name: 'Custom ENV Variables'
 
 on:
@@ -9,20 +13,33 @@ env:
 
 # A workflow run is made up of one or more jobs that can run specifically or in parallel. 
 jobs:
-  mainjob:
-    name: 'Print the environment variables'
+  custom-GITHUB_ENV-var-Demo:
     runs-on: ubuntu-latest
-
-    env:
-      Greeting: Dear
-      testvar: value-2
-
     steps:
-    - name: print-values-of-env-vars
+    - name: Set the value
+      id: step_one
       run: |
-        echo "$Greeting $First_name. Today is $DAY_OF_WEEK"
-        echo "testvar $testvar"
-        echo "testvar ${{ env.testvar}}"  # Recommended
-    #   env:
-    #     First_name: Student
-    #     testvar: value-3
+        echo "action_state=yellow" >> $GITHUB_ENV
+    
+    - name: Use the value
+      id: step_two
+      run: |
+        echo: "${{ env.action_state }}" # This will output 'yellow'
+
+#   mainjob:
+#     name: 'Print the environment variables'
+#     runs-on: ubuntu-latest
+
+#     env:
+#       Greeting: Dear
+#       testvar: value-2
+
+#     steps:
+#     - name: print-values-of-env-vars
+#       run: |
+#         echo "$Greeting $First_name. Today is $DAY_OF_WEEK"
+#         echo "testvar $testvar"
+#         echo "testvar ${{ env.testvar}}"  # Recommended
+#     #   env:
+#     #     First_name: Student
+#     #     testvar: value-3

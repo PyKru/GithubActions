@@ -20,7 +20,8 @@ jobs:
         echo "$GITHUB_WORKFLOW"
         echo "$GITHUB_REPOSITORY_OWNER"
         echo "$GITHUB_RUN_NUMBER"
-        echo "$GITHUB_NAME"
+        echo "$GITHUB_SERVER_URL"
+        echo "$RUNNER_NAME"
 
 #   ubuntu-environment-variables:
 #     runs-on: ubuntu-latest

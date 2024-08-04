@@ -1,0 +1,16 @@
+# A runner is a server that runs your workflows when they are triggered. Each runner can run a single job at a time. 
+# GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows. 
+# Each workflow run executes in a fresh, newly-provisioned virtual machine. 
+
+# Types of Runner:
+# 1. Github hosted runner
+# 2. Self hosted runner:
+    # - Software dependency
+    # - VM Size and Configuration
+    # - Secure Access and Networking
+    # - Large workload support
+
+
+# Deploy a VM in Azure OR AWS. Install Self hosted runner in the personal system and can delete it later. 
+# Settings --> Actions --> Runners --> Linux
+# - Follow the script and execute

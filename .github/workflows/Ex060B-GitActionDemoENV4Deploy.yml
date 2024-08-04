@@ -1,0 +1,24 @@
+# We can configure environments with protections rules and secrets.
+# A workflow job that references an environment must follow any protection rules
+# for the environment before running or accessing the environment's secrets.
+
+# Use GitHub Environment Secrets. 
+
+name: GitHub Environments
+
+
+on:
+  workflow_dispatch
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: production
+      url: https://github.com
+
+    steps:
+      - name: 'Print secret from environment'
+        run: |
+          echo: "APP_SECRET: ${{ secrets.APP_SECRET }}"

@@ -16,7 +16,7 @@ jobs:
 
     environment:
       name: production
-      url: https://github.com
+      url: https://github.com # Specify URLs for QA, DEV, UAT or PROD
 
     steps:
       - name: 'Print secret from environment'
